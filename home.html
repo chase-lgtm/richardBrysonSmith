@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCOUNTS</title>
+<link rel="shortcut icon" href="img/logoIcon-removebg-preview.png" type="image/x-icon">
+</head>
+<body>
+<style>
+header{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 2;
+}
+main{
+position: fixed;
+top:4%;
+left:0;
+right:0;
+bottom:10%;
+overflow: auto;
+padding-top: 2em;
+background: url('/img/bgsample.jpg.png');
+}	
+footer{
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 1;
+/*.footerIcons
+{padding-inline: 0.4em;
+display: flex;
+justify-content: space-between;}*/
+}
+
+
+
+
+body {
+font-family: Arial, sans-serif;
+padding: 0;background: url('/img/bgsample.jpg.png');
+margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+/*height: 100vh;*/
+}
+
+
+
+.dashboard-container {
+	background: url('/img/bgsample.jpg.png');
+	padding: 1em;
+
+flex: 1;
+overflow: hidden;
+}
+
+.header h1 {
+font-size: 2em;
+margin: 0;
+}
+
+.header .date {
+color: #666;
+font-size: 1em;
+margin: 5px 0 20px 0;
+}
+
+.quick-actions {
+display: flex;
+justify-content: space-around;
+margin-bottom: 20px;
+}
+.plus{font-size: 2.4em; font-weight: 100;}
+.action-button {
+background-color: #fffffff1;
+color:#0060B4;
+
+border: none;
+/*padding: 0.7em;*/
+border-radius: 14px;
+cursor: pointer;
+font-size: clamp(11px, 0.8dvw, 18px);
+font-weight: 600;
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.13);
+}
+
+
+.snapshot {box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+background-color: #ffffff;
+padding: 15px;
+border-radius: 8px;
+margin-bottom: 20px;
+outline: 0.1px solid rgba(128, 128, 128, 0.288);
+display: flex;
+align-items: start;
+justify-content: space-between;
+gap: 0.72em;
+flex-wrap:nowrap;
+	   .iconSnap{flexbasis:150px;padding-top:5px;scale: 1.5; height: 40px; width: 30px; border-radius: 50%; margin-right: 0.5em;}
+}
+
+	.snapCnt{flex:1;}
+	.iconRsnap{flex-basis:100px; text-align:right }
+.snapshot h2 {
+font-size: 0.7em;
+margin: 0 0 5px 0;
+}
+
+.snapshot .read-time {
+color: #000;
+font-size: 0.7em;
+background: #0000003b;
+}
+
+.snapshot p {
+margin: 0; text-wrap: nowrap;
+font-size: 0.85em;
+}
+
+.accounts-section h2 {
+font-size: 1.2em;
+margin: 0 0 10px 0;
+}
+
+.acctTitle{
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+.account-details {
+background-color: #ffffff;
+padding: 15px;
+border-radius: 8px;
+margin-bottom: 20px;
+position: relative;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.account-details p {
+margin: 0 0 10px 0;
+text-wrap: nowrap;
+font-size: 0.7em;
+}
+
+.account .balance {
+font-size: 1.5em;
+font-weight: 400;
+margin: 1em 0 0 0;
+text-align: right;
+}
+
+.account .available-balance {
+color: #666;
+font-size: 0.70em;
+text-align: right;
+margin: 0 0 3.5em 0;
+
+}
+
+.link-account-button {
+color: #000;
+border: none;
+padding: 0.9em;
+border-radius: 0.7em;
+cursor: pointer;
+font-size: 14px;
+width: 100%;
+text-align: left;
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+border: solid 0.1px rgba(128, 128, 128, 0.562);
+background: #fff;
+}
+
+.account{display: flex;justify-content: space-between;padding-top: 3.5em;
+
+}
+.accLeft{width: 50%;margin: 0;}
+.acctRight{
+width: 37%;margin: 0;
+padding-right: 1.5em;
+}
+
+.bankAccts{
+background:#0060B4;
+color: #fff;
+font-size: 1em !important;
+position: absolute;
+top:0;
+left: 0;
+right:0;
+padding: 1em;
+margin: 0.7em;
+
+border-top: 0px solid transparent;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+
+
+.jsOr{
+position: absolute;
+right: 0;
+padding-right: 0.2em;
+top: 45%;
+scale: 1.3;
+color: #666;
+font-weight: lighter;
+}
+
+.open-account-section {
+margin-bottom: 1.4em;
+}
+
+.open-account-section h2 {
+font-size: 1em;
+margin: 0 0 1px 0;
+padding-left: 1em;
+
+}
+
+.account-options {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/*display: flex;
+justify-content: space-between;
+gap: 10px;*/
+background: #fff;
+padding: 0.5em;outline: 0.1px solid rgba(128, 128, 128, 0.288);border-radius: 0.7em;}
+
+.option {
+background-color: #ffffff;
+padding: 0.5em;
+border-radius: 0.7em;
+text-align: center;
+flex: 1;
+}
+
+.option .icon {
+font-size: 1.2em;
+color: #0060B4;
+margin-bottom: 0.5em;
+}
+
+.option p {
+margin: 0;
+font-size: 0.7em;
+}
+
+
+.footer-navigation {
+display: flex;
+justify-content: space-between;
+font-size: 14px;
+color: #666;
+}
+</style>
+
+
+<header>
+	
+	<!--
+<div class="left">
+	<img src="/img/chat.jpg" alt="" width="30px" height="25px">
+<img src="/img/wallet.jpg" alt="" width="29px" height="25px">
+</div>
+<div class="center">
+	<img src="img/logoIcon-removebg-preview.png" width="55%" height="40px" alt="">
+</div>
+
+<div class="right">
+	<img src="img/user.png" width="27px" height="27px"
+	alt="">
+</div>-->
+<img src="img/headerUpdate.jpg" width="100%">
+	</header>
+
+<main>
+
+<div class="dashboard-container">
+
+
+<div class="header">
+<h1>Good morning</h1>
+<p class="date" id="date">September 11, 2023</p>
+</div>
+
+<div class="quick-actions">
+<button class="action-button"><span class="plus">+</span></button>
+<button class="action-button">Send | Zelle®</button>
+<button class="action-button" id="deposit">Deposit checks</button>
+<button class="action-button">Pay bills</button>
+</div>
+
+<div class="snapshot">
+<div class="iconSnap">
+<img src="img/cardAtm.jpg.png" alt="">
+</div>
+<div class="snapCnt">
+	
+<h2>Today's Snapshot <span class="read-time">30 sec read</span></h2>
+<p>Money in this month: <strong>$0</strong>.</p>
+</div>
+
+<div class="iconRsnap">
+		<span style="text-align: right;font-weight: 900;font-size: larger; font-family:  monospace;"> > </span>
+</div>
+</div>
+
+<div class="accounts-section" id="account">
+<div class="acctTitle">
+	<h2>Accounts</h2>
+	<img src="img/dot.jpg"width="20px" height="20px" alt="">
+</div>
+<div class="account-details">
+<p class="bankAccts"><strong>Bank accounts (1)</strong></p>
+<div class="account">
+	<span class="jsOr">
+		||
+	</span>
+<div class="accLeft">
+<p>CHASE SECURE BANKING(...1857) 		<span style="padding-left:2%;font-weight: 900;font-size: larger; font-family:  monospace;"> > </span></div>
+<div class="acctRight">
+
+<p class="balance">$628,000.96
+</p>
+<p class="available-balance">Available balance</p>
+</div>
+</div>
+<button class="link-account-button">Link external accounts</button>
+</div>
+</div>
+
+<style>
+.creditCardSection{
+	background-color: #ffffff;
+padding: 15px;
+border-radius: 8px;
+margin-bottom: 20px;
+position: relative;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.cardHeader{
+	background:#0060B4;
+	color: #fff;
+font-size: 1em !important;
+position: absolute;
+top:0;
+left: 0;
+right:0;
+padding: 1em;
+border-top: 0px solid transparent;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+
+.cardsMain{
+margin-top: 3em;
+span{
+font-size: 1em;
+}
+}
+
+.cardImgBal{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-block: 1em;
+
+.bal{
+display: flex;
+flex-direction: column;
+text-align: right;
+
+}
+}
+
+.moni{
+font-size: 1.5em !important;
+}
+.currText{
+font-size: 0.70em !important;
+}
+</style>
+
+<!--
+<div class="creditCardSection">
+	<div class="cardHeader">
+		Credit cards(1)
+	</div>
+	<span class="jsOr">
+		||
+	</span>
+<div class="cardsMain">
+	<span>
+		Credit Card (...1524) >
+	</span>
+	<div class="cardImgBal">
+		<div class="img">
+			<img src="img/creditCard.jpg.png" alt="">
+		</div>
+		<div class="bal">
+		<span class="moni">
+			$628,000.96
+		</span>
+
+		<span class="currText">
+			Current balance
+		</span>
+		</div>
+	</div>
+</div>
+-->
+</div>
+<div class="open-account-section">
+<div class="account-options">
+	
+	<h2>Open an account</h2>
+
+<div class="option">
+	<!--<img src="img/cardAtm.jpg.png" alt="">
+<p>Credit cards</p>
+</div>
+<div class="option">
+<img src="img/cardAtm.jpg.png" alt=""><p>Checking</p>
+</div>
+<div class="option">
+	<img src="img/cardAtm.jpg.png" alt=""><p>Savings & CDs</p>
+</div>
+<div class="option">
+	<img src="img/cardAtm.jpg.png" alt=""><p>Business</p>
+</div>-->
+<img src="img/OPEN.jpg" width="100%" alt="">
+</div>
+
+
+
+</div>
+</main>
+
+<footer>
+<img src="img/footer.jpg" alt="" width="100%">
+</footer>
+<script>
+document.getElementById('deposit').addEventListener('click', function () {
+	window.location.href = 'deposit.html';
+})
+
+	document.getElementById("account").addEventListener("click", function goNext(){
+		window.location.href = "balance.html";
+	})
+
+	const today = new Date;
+      const format = {year : 'numeric', month : 'long', day : 'numeric'}
+	const dayDate = today.toLocaleDateString('en-US', format);
+
+	document.getElementById('date').innerText = dayDate;
+
+</script>
+
+</body>
+</html>
