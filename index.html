@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="img/logoIcon-removebg-preview.png" type="image/x-icon">
+<title>Document</title>
+</head>
+<body>
+
+<style>
+body{background: white;}
+.container{
+background: white;
+height: 100dvh;
+width: 100%;
+overflow: hidden;
+position: relative;
+}
+.top{
+background: #0055A4;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom:30%;	
+
+.logo{
+width: 50%;
+margin: auto;text-align: 
+center;
+img{width: 100%; margin: auto; max-height: 150px; max-width: 150px;}
+}
+}
+.bottom{
+background: #fff;
+position: absolute;
+top: 70%;
+left: 0;
+right: 0;
+bottom:0;	
+
+
+
+.links{
+padding-top: 10%;
+
+text-align: center;
+a{text-decoration: none; color: #0055A4; padding-inline: 0.2em;}
+
+}
+
+p{
+width: 80%;
+margin: auto;
+text-align: center;
+padding-top: 0.5em;
+}
+}
+
+
+.formContainer{
+width: 100%;
+max-height: 400px;
+position: absolute;
+bottom:-5%;
+z-index: 1;
+}
+
+form{
+padding-block:0.7em ;
+background: white;
+text-align: center;    
+width: 90%;
+margin: auto;
+overflow: hidden;
+box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+outline: 1px solid rgba(0, 0, 0, 0.24);
+}
+
+input{
+	margin :auto;
+width: 95%;
+padding: 1em 0.1em;
+font-size: clamp(10px , 14px , 16px);font-weight: 350;
+border: none;
+outline: none;
+border-bottom: 1px rgba(0, 0, 0, 0.384) solid;
+}
+.checkBoxes{
+display: flex;
+align-items: center;
+justify-content: space-around;
+padding-inline: 0.8em;
+text-wrap: nowrap;
+padding-block: 0.5em;
+margin: auto;
+gap: 10%;
+input{
+margin: 0;
+padding: 0;
+}
+
+
+.checkBox{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 0.6em;
+}
+}
+
+.forgotPass{
+color: #0055A4;
+}
+button {
+width: 90%;
+padding: 10px;
+background: #0055A4;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin: 10px 0;
+}
+
+</style>
+<div class="container">
+<div class="top">
+<!-- Loggo -->
+
+<div class="logo">
+<img src="img/76e91397-59cc-4ecd-ada1-c343f6aff6d1.jpg" width="60%" >
+</div>
+<!-- End logo -->
+<div class="formContainer">
+
+<form>
+<input type="text" name="" id="userName" placeholder="Enter your username">
+
+<input type="password" name="" id="password" placeholder="Enter your password">
+
+<div class="checkBoxes">
+<div class="checkBox">
+<span>Remember Me</span>	
+<input type="checkbox" name="" id="">
+</div>
+
+
+<div class="checkBox">
+<span>Use token</span>	
+<input type="checkbox" name="" id="">
+</div>
+</div>
+
+<button class="submit" id="submit" onclick="logIn()">
+Sign In
+</button>
+
+<div class="forgotPass">
+<span>
+Forgot username or password
+</span>
+</div>
+</form>
+
+</div>	
+</div>
+
+<div class="bottom">
+
+<div class="links">
+<a href="#">Sign up</a>
+<span>|</span>
+<a href="#">Open an account</a>
+<span>|</span>
+<a href="#">Privacy</a>
+<span>|</span>
+
+<a href="#">***</a>
+</div>
+<p>
+
+<p>
+
+
+Equal Housing Lender<br>
+Deposit products provided by  Chase Bank, N.A. 
+Member FDIC.<br>
+
+
+Credit cards are issued by Chase Bank, N.A.<br> Member FDIC
+
+
+<br>
+&copy; 2023 JPMorgan Chase & Co.
+
+</p>
+</div>
+<!-- </div>
+<div class="overLay">
+	<h2>Learn More</h2>
+<div class="overLayHead">
+	<h3>OverLay Header</h3>
+
+	<span>X</span>
+</div>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, tempore dicta culpa delectus harum ipsa magni voluptatem laudantium nostrum possimus? Esse sapiente aliquid repellat eveniet, modi quisquam earum laboriosam vel.</p>
+</div> -->
+<script>
+document.addEventListener("DOMContentLoaded", function (){
+	document.getElementById("submit").addEventListener("click", function(event) {
+event.preventDefault();
+
+		const userName = "BRYSONSMITH";
+        const password = "RICHARD178";
+
+        let enteredUserName = document.getElementById("userName").value;
+        let enteredPassword = document.getElementById("password").value;
+
+
+        if (enteredUserName === userName && enteredPassword === password) {
+            window.location.href = "home.html"; // Redirect on success
+        } else {
+            alert("Enter a valid username or password.");
+        }
+	})
+})
+</script>
+</body>
+</html>
