@@ -198,35 +198,56 @@ Credit cards are issued by Chase Bank, N.A.<br> Member FDIC
 
 </p>
 </div>
-<!-- </div>
-<div class="overLay">
-	<h2>Learn More</h2>
-<div class="overLayHead">
-	<h3>OverLay Header</h3>
 
-	<span>X</span>
-</div>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, tempore dicta culpa delectus harum ipsa magni voluptatem laudantium nostrum possimus? Esse sapiente aliquid repellat eveniet, modi quisquam earum laboriosam vel.</p>
-</div> -->
-<script>
-document.addEventListener("DOMContentLoaded", function (){
-	document.getElementById("submit").addEventListener("click", function(event) {
-event.preventDefault();
-
-		const userName = "BRYSONSMITH";
-        const password = "RICHARD178";
-
-        let enteredUserName = document.getElementById("userName").value;
-        let enteredPassword = document.getElementById("password").value;
-
-
-        if (enteredUserName === userName && enteredPassword === password) {
-            window.location.href = "home.html"; // Redirect on success
-        } else {
-            alert("Enter a valid username or password.");
-        }
-	})
-})
+<script>document.addEventListener("DOMContentLoaded", function () {
+	document.getElementById("submit").addEventListener("click", function (event) {
+	    event.preventDefault();
+  
+	    const userName = "BRYSONSMITH";
+	    const password = "RICHARD178";
+  
+	    let enteredUserName = document.getElementById("userName").value;
+	    let enteredPassword = document.getElementById("password").value;
+  
+	    // Remove existing error message if it exists
+	    const existingErrorDiv = document.getElementById("errorDiv");
+	    if (existingErrorDiv) {
+		  existingErrorDiv.remove();
+	    }
+  
+	    if (enteredUserName === userName && enteredPassword === password) {
+		  window.location.href = "home.html"; // Redirect on success
+	    } else {
+		  // Create error div dynamically
+		  const errorDiv = document.createElement("div");
+		  errorDiv.id = "errorDiv";
+		  errorDiv.innerText = "Invalid Username or Password";
+  
+		  // Style the error message
+		  errorDiv.style.position = "absolute";
+		  errorDiv.style.top = "30%";
+		  errorDiv.style.left = "50%";
+		  errorDiv.style.transform = "translate(-50%, -50%)";
+		  errorDiv.style.backgroundColor = " #0055A4";
+		  errorDiv.style.color = "white";
+		  errorDiv.style.padding = "15px 25px";
+		  errorDiv.style.borderRadius = "5px";
+		  errorDiv.style.fontSize = "18px";
+		  errorDiv.style.fontWeight = "bold";
+		  errorDiv.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.2)";
+		  errorDiv.style.zIndex = "1000";
+  
+		  // Append error message to the body
+		  document.body.appendChild(errorDiv);
+  
+		  // Remove the error message after 3 seconds
+		  setTimeout(() => {
+			errorDiv.remove();
+		  }, 3000);
+	    }
+	});
+  });
+  
 </script>
 </body>
 </html>
